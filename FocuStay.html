@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocuStay - Let's Focus!</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script>const { createClient } = supabase</script>
+    <link rel="stylesheet" href="FocuStay.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="background" id="custom-background"></div>
+            <div class="pomodoro">
+                <h2>Pomodoro Timer</h2>
+                <div class="flip-clock" id="timer">25:00</div>
+                <span class="settings-button" id="open-settings">⚙️</span>
+                <button id="start">Start</button>
+                <button id="reset">Reset</button>
+                <div id="frequency-record">Pomodoro: 0 | Short Break: 0 | Long Break: 0</div>
+                <div class="quote" id="daily-quote">Loading quote...</div>
+            </div>
+            <div class="icons-container">
+                <div class="login-icon" id="login-icon">👤</div>
+                <div class="theme-switcher" id="theme-switcher">🌓</div>
+                <div class="wallpaper-switcher" id="wallpaper-switcher">🖼️</div>
+                <div class="music-control" id="music-control">🎵</div>
+            </div>
+        </div>
+        <div class="right-section">
+            <h2>Tasks</h2>
+            <input type="text" id="task-input" placeholder="New Task">
+            <button id="add-task">Add</button>
+            <button id="modify-tasks">Modify</button>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <div class="login-modal" id="login-modal">
+        <h3>Login / Register</h3>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-button">Login</button>
+        <button id="register-button">Register</button>
+        <button id="close-login-modal">Close</button>
+    </div>
+    <div class="modal" id="settings-modal">
+        <h3>Set Timer</h3>
+        <label>Focus Time: <input type="number" id="work-time" min="1" value="25"></label>
+        <label>Rest Time: <input type="number" id="rest-time" min="1" value="5"></label>
+        <label>Long Rest Time: <input type="number" id="long-rest-time" min="1" value="15"></label>
+        <button id="save-settings">Save</button>
+    </div>
+    <div class="wallpaper-list-modal" id="wallpaper-list-modal">
+        <h3>Select Wallpaper</h3>
+        <div class="wallpaper-item" data-src="ocean.jpg">Ocean</div>
+        <div class="wallpaper-item" data-src="forest.jpg">Forest</div>
+        <div class="wallpaper-item" data-src="city.jpg">City</div>
+        <div class="wallpaper-item" data-src="table.jpg">Table</div>
+    </div>
+    <div class="playlist-modal" id="playlist-modal">
+        <h3>Select Music</h3>
+        <div class="playlist-item" data-src="Magical-Moments-chosic.com_.mp3">Song 1</div>
+        <div class="playlist-item" data-src="Inspiring-Dreams(chosic.com).mp3">Song 2</div>
+        <div class="playlist-item" data-src="purrple-cat-midnight-snack(chosic.com).mp3">Song 3</div>
+        <div class="playlist-item" data-src="barradeen-bedtime-after-a-coffee(chosic.com).mp3">Song 4</div>
+    </div>
+    <audio id="background-music" loop></audio>
+    <audio id="start-bell" src="mixkit-attention-bell-ding-586.wav"></audio>
+    <audio id="end-bell" src="mixkit-kids-cartoon-close-bells-2256.wav"></audio>
+    <script src="FocuStay.js"></script>
+</body>
+
+</html>

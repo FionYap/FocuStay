@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    transition: background 0.3s, color 0.3s;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.left-section { 
+    /*Pomodoro timer part*/
+    flex: 8; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.right-section {
+    /*Task bar part*/
+    flex: 2; 
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center/cover;
+    z-index: -1;
+}
+.pomodoro {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.flip-clock {
+    font-size: 10em;
+    font-weight: bold;
+    background: black;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+.todo ul {
+    list-style: none;
+    padding: 0;
+}
+.todo li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eee;
+    padding: 10px;
+    margin: 5px 0;
+    width: 200px;
+    border-radius: 5px;
+}
+.settings-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.modal input {
+    display: block;
+    margin: 10px 0;
+}
+.quote {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+.login-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.theme-switcher {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.wallpaper-switcher {
+    position: absolute;
+    top: 50px; 
+    left: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.music-control {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.playlist-modal, .wallpaper-list-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.playlist-item, .wallpaper-item {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    background: #eee;
+    border-radius: 5px;
+}
+.dark-mode {
+    background: #333;
+    color: #fff;
+}
+.dark-mode .right-section {
+    background: #444;
+    color: #fff;
+}
+.dark-mode .pomodoro {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+.dark-mode .flip-clock {
+    background: #fff;
+    color: #000;
+}
+.login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    font-family: Arial, sans-serif;
+}
+
+.login-modal h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.login-modal input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-modal button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-modal button#login-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login-modal button#login-button:hover {
+    background-color: #45a049;
+}
+
+.login-modal button#register-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+.login-modal button#register-button:hover {
+    background-color: #007B9A;
+}
+
+.login-modal button#close-login-modal {
+    background-color: #f44336;
+    color: white;
+}
+
+.login-modal button#close-login-modal:hover {
+    background-color: #da190b;
+}
+
+.dark-mode .login-modal {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .login-modal h3 {
+    color: #fff;
+}
+
+.dark-mode .login-modal input {
+    background-color: #444;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .login-modal button {
+    border: 1px solid #777;
+}
