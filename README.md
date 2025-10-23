@@ -27,6 +27,7 @@ How to Use:
 • You can pause or switch tracks while studying.
 
 Tips for Best Results:
+
 • Try the classic 25-minute focus + 5-minute rest cycle.
 
 • Use peaceful wallpaper and soft lofi music to reduce stress and improve mood.
